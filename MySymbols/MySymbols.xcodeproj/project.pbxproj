@@ -16,6 +16,7 @@
 		8223D0D125F165F100B0DF09 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D0D025F165F100B0DF09 /* TabBarView.swift */; };
 		8223D0D425F1660600B0DF09 /* SymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D0D325F1660600B0DF09 /* SymbolsView.swift */; };
 		8223D0D725F1661000B0DF09 /* RestrictedSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223D0D625F1661000B0DF09 /* RestrictedSymbolsView.swift */; };
+		828B887B25F1763400C3DAAF /* SearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B887A25F1763400C3DAAF /* SearchingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8223D0D025F165F100B0DF09 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		8223D0D325F1660600B0DF09 /* SymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsView.swift; sourceTree = "<group>"; };
 		8223D0D625F1661000B0DF09 /* RestrictedSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictedSymbolsView.swift; sourceTree = "<group>"; };
+		828B887A25F1763400C3DAAF /* SearchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				8223D0D025F165F100B0DF09 /* TabBarView.swift */,
 				8223D0B725F1140500B0DF09 /* ContentView.swift */,
 				8223D0D325F1660600B0DF09 /* SymbolsView.swift */,
+				828B887A25F1763400C3DAAF /* SearchingView.swift */,
 				8223D0D625F1661000B0DF09 /* RestrictedSymbolsView.swift */,
 				8223D0C525F118A100B0DF09 /* restrictedSymbols.json */,
 				8223D0C825F118A900B0DF09 /* symbols.json */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8223D0D425F1660600B0DF09 /* SymbolsView.swift in Sources */,
+				828B887B25F1763400C3DAAF /* SearchingView.swift in Sources */,
 				8223D0B825F1140500B0DF09 /* ContentView.swift in Sources */,
 				8223D0D125F165F100B0DF09 /* TabBarView.swift in Sources */,
 				8223D0B625F1140500B0DF09 /* MySymbolsApp.swift in Sources */,

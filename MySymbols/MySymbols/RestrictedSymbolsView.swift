@@ -27,7 +27,11 @@ struct RestrictedSymbolsView: View {
                         .frame(height: 45)
                     ForEach(
                         isSearching ?
-                            restrictedSymbols.filter({$0.symbolName.lowercased().contains(searchedSymbol.lowercased())})
+                            restrictedSymbols.filter({
+                                $0.symbolName.lowercased().contains(searchedSymbol.lowercased()) ||
+                                    $0.feature.lowercased().contains(searchedSymbol.lowercased())
+                                
+                            })
                             : restrictedSymbols
                         , id: \.self) { restrictedSymbol in
                         VStack {
