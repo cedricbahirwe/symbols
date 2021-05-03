@@ -14,35 +14,28 @@ struct SearchingView: View {
         _searchedSymbol = term
     }
     var body: some View {
-        HStack(spacing: 5) {
-            HStack {
-                TextField("Type somethin'", text: $searchedSymbol)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(false)
-                    .padding(.leading, 8)
-                
-                Button(action: {
-                    
-                }, label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(Color(.label))
-                        .frame(width: 40, height: 40)
-                })
-            }
-            .frame(height: 40)
-            .border(Color(.label))
-            .font(.system(size: 20, weight: .semibold, design: .rounded))
-            if !searchedSymbol.isEmpty {
-                Button(action: {
-                    withAnimation {
-                        searchedSymbol = ""
-                    }
-                }, label: {
-                    Text("Cancel")
-                        .foregroundColor(Color(.darkGray))
-                })
-            }
+        HStack {
+            TextField("Type somethin'", text: $searchedSymbol)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .padding(.leading, 8)
+            
+            Button(action: {
+                withAnimation {
+                    searchedSymbol = ""
+                }
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
+            }, label: {
+                Image(systemName: searchedSymbol.isEmpty ? "magnifyingglass" : "multiply")
+                    .foregroundColor(Color(.label))
+                    .frame(width: 40, height: 40)
+            })
+            .disabled(searchedSymbol.isEmpty)
         }
+        .font(.system(size: 20, weight: .semibold, design: .rounded))
+        .frame(height: 40)
+        .border(Color(.label))
         .padding(.horizontal)
         .padding(.bottom, 3)
         .background(Color(.systemBackground).opacity(0.9))

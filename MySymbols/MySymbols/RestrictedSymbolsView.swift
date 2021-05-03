@@ -12,9 +12,9 @@ fileprivate struct RestrictedSymbol:Decodable, Hashable {
     var feature: String
 }
 
-
 struct RestrictedSymbolsView: View {
-    private var restrictedSymbols: [RestrictedSymbol] = Bundle.main.decode([RestrictedSymbol].self, from: "restrictedSymbols.json").filter({ !$0.symbolName.hasSuffix(".rtl")})
+    private let restrictedSymbols: [RestrictedSymbol] = Bundle.main.decode([RestrictedSymbol].self, from: "restrictedSymbols.json")
+        .filter({ !$0.symbolName.hasSuffix(".rtl")})
     
     @State private var searchedSymbol = ""
     @State private var isSearching: Bool = false
@@ -55,7 +55,7 @@ struct RestrictedSymbolsView: View {
         }
     }
     
-    func checkSearch(_ value: String) {
+    private func checkSearch(_ value: String) {
         withAnimation {
             isSearching = !value.isEmpty
         }
