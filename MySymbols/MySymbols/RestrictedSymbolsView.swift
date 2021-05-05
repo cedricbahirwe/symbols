@@ -13,6 +13,7 @@ fileprivate struct RestrictedSymbol:Decodable, Hashable {
 }
 
 struct RestrictedSymbolsView: View {
+    @Binding var color: Color
     private let restrictedSymbols: [RestrictedSymbol] = Bundle.main.decode([RestrictedSymbol].self, from: "restrictedSymbols.json")
         .filter({ !$0.symbolName.hasSuffix(".rtl")})
     
@@ -64,6 +65,7 @@ struct RestrictedSymbolsView: View {
 
 struct RestrictedSymbolsView_Previews: PreviewProvider {
     static var previews: some View {
-        RestrictedSymbolsView()
+        RestrictedSymbolsView(color: .constant(.accentColor))
+        //            .preferredColorScheme(.dark)
     }
 }

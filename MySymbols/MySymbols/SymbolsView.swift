@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SymbolsView: View {
-    private var symbols: [String] = Bundle.main.decode([String].self, from: "symbols.json")
+    @Binding var color: Color
     
-    @State private var columns =
+    private let symbols: [String] = Bundle.main.decode([String].self, from: "symbols.json")
+    
+    private let columns =
         [
             GridItem(.flexible()),
             GridItem(.flexible())
@@ -21,6 +23,7 @@ struct SymbolsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 Spacer()
                     .frame(height: 45)
                 ScrollView {
@@ -37,18 +40,22 @@ struct SymbolsView: View {
                                 Text(symbol)
                                     .lineLimit(2)
                                     .minimumScaleFactor(0.5)
+                                    .foregroundColor(.primary)
                             }
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                         }
                     }
                     .padding(.horizontal, 10)
-                    
                 }
                 .navigationBarTitle("Symbols")
             }
             .frame(maxWidth: .infinity)
             .overlay(SearchingView($searchedSymbol) , alignment: .top)
             .onChange(of: searchedSymbol, perform: checkSearch)
+            .navigationBarItems(trailing:
+                                    ColorPicker("Picker a color", selection: $color)
+                                    .labelsHidden()
+            )
         }
     }
     func checkSearch(_ value: String) {
@@ -60,6 +67,6 @@ struct SymbolsView: View {
 
 struct SymbolsView_Previews: PreviewProvider {
     static var previews: some View {
-        SymbolsView()
+        SymbolsView(color: .constant(.black))
     }
 }

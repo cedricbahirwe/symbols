@@ -46,5 +46,6 @@ struct SearchingView: View {
 struct SearchingView_Previews: PreviewProvider {
     static var previews: some View {
         SearchingView(.constant(""))
+            .previewLayout(.fixed(width: 400, height: 75))
     }
 }
