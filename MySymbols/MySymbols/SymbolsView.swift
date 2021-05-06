@@ -23,7 +23,6 @@ struct SymbolsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 Spacer()
                     .frame(height: 45)
                 ScrollView {
@@ -37,6 +36,7 @@ struct SymbolsView: View {
                                 Image(systemName: symbol)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                
                                 Text(symbol)
                                     .lineLimit(2)
                                     .minimumScaleFactor(0.5)

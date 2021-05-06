@@ -11,7 +11,7 @@ struct TabBarView: View {
     @State private var selection: Int = 1
     @State private var color = Color.primary
     var body: some View {
-        TabView(selection: $selection)  {
+        TabView(selection: $selection) {
             SymbolsView(color: $color)
                 .tabItem {
                     Image(systemName: "house.circle.fill")
